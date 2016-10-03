@@ -18,6 +18,7 @@ Get it with `curl -fsSL https://get.docker.com/ | sh`, then do:
 ```bash
 cd <some folder>
 mkdir data
+mv path/to/rosbag/dataset.bag data/dataset.bag # put dataset.bag into data folder
 docker run -v $(pwd)/data:/data dominicbreuker/ubuntu_ros:latest bin/bash -c "source /opt/ros/jade/setup.bash ; python /extract_data.py"
 ```
 
