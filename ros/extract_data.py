@@ -35,8 +35,6 @@ left_image_timestamps = []
 center_image_timestamps = []
 right_image_timestamps = []
 
-counter = 0
-
 bridge = CvBridge()
 
 
@@ -61,9 +59,6 @@ with rosbag.Bag(rosbag_file, "r") as bag:
         elif topic == right_camera_topic:
             right_image_timestamps.append(msg.header.stamp.to_nsec())
             try_write_image(right_images_dir, msg)
-        counter += 1
-        if counter >= 100:
-            break
 
 
 # make sure timestamps are in ascending chronological order
