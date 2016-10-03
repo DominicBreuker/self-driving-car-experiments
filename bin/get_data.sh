@@ -1,8 +1,6 @@
 DATA_DIR=$(pwd)/data
 echo "using "$DATA_DIR" as data dir"
+mkdir -p $DATA_DIR
 
-mkdir -p DATA_DIR
-cd DATA_DIR
-
-wget --continue https://archive.org/download/comma-dataset/comma-dataset.zip
-unzip tar xvfz somefilename.tar.gz
+wget --continue -O $DATA_DIR/dataset.bag.tar.gz http://bit.ly/udacity-dataset-2-1
+unzip tar xvfz $DATA_DIR/dataset.bag.tar.gz
